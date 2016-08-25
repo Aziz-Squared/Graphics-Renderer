@@ -11,13 +11,13 @@ void test()
 	glfwTerminate();
 }
 
-Geometry makeGeometry(Vertex * verts, size_t vsize, unsigned int * tris, size_t tsize)
+Geometry makeGeometry(const Vertex * verts, size_t vsize, const unsigned int * tris, size_t tsize)
 {
 	Geometry retval;
 	// Define the variables
-	glCreateBuffers(1, &retval.vbo);	   // Store my vertices
-	glCreateBuffers(1, &retval.ibo);	   // Store my indices
-	glCreateVertexArrays(1, &retval.vao);  // Store attribute information
+	glGenBuffers(1, &retval.vbo);	   // Store my vertices
+	glGenBuffers(1, &retval.ibo);	   // Store my indices
+	glGenVertexArrays(1, &retval.vao);  // Store attribute information
 
 	// Scope the variables
 	glBindVertexArray(retval.vao);
@@ -27,7 +27,7 @@ Geometry makeGeometry(Vertex * verts, size_t vsize, unsigned int * tris, size_t 
 	// Initialize the variables
 	new float[4];
 	glBufferData(GL_ARRAY_BUFFER, vsize * sizeof(Vertex), verts, GL_STATIC_DRAW);
-	glBufferData(GL_ARRAY_BUFFER, tsize * sizeof(unsigned), tris, GL_STATIC_DRAW);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, tsize * sizeof(unsigned), tris, GL_STATIC_DRAW);
 
 	// Attributes
 	glEnableVertexAttribArray(0);
@@ -44,10 +44,54 @@ Geometry makeGeometry(Vertex * verts, size_t vsize, unsigned int * tris, size_t 
 	return retval;
 }
 
-void freeGeometry(Geometry &)
+void freeGeometry(Geometry &geo)
 {
 	glDeleteBuffers(1, &geo.vbo);
 	glDeleteBuffers(1, &geo.ibo);
 	glDeleteVertexArrays(1, &geo.vao);
 	geo = { 0, 0, 0, 0 };
+}
+
+Shader makeShader(const char *vsource, const char *fsource)
+{
+	Shader retval;
+	// Create our variables
+	retval.handle = glCreateProgram();
+	unsigned vs = glCreateShader(GL_VERTEX_SHADER);
+	unsigned fs = glCreateShader(GL_FRAGMENT_SHADER);
+	// Initialize our variables
+	glShaderSource(vs, 1, &vsource, 0);
+	glShaderSource(fs, 1, &fsource, 0);
+	// Compile the shaders
+	glCompileShader(vs);
+	glCompileShader(fs);
+	// Linke the shaders into a single program
+	glAttachShader(retval.handle, vs);
+	glAttachShader(retval.handle, fs);
+	glLinkProgram(retval.handle);
+	// No longer need these! Their functionality has been eaten by the program
+	glDeleteShader(vs);
+	glDeleteShader(fs);
+
+
+	return retval;
+}
+
+void freeShader(Shader &shader)
+{
+	glDeleteProgram(shader.handle);
+	shader.handle = 0;
+}
+
+void draw(const Geometry &geometry, const Shader &shader)
+{
+	glUseProgram(shader.handle);
+
+	// Binding the VAO also binds the IBO (tri) and VBO (verts)
+	glBindVertexArray(geometry.vao);
+
+	// Draw elements will draw the vertices that are currently bound
+	// using an array of indices
+	// IF AN IBO IS BOUND, we don't need to provide any indices
+	glDrawElements(GL_TRIANGLES, geometry.size, GL_UNSIGNED_INT, 0);
 }
