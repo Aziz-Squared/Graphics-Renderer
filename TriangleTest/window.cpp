@@ -9,7 +9,7 @@
 
 #ifdef _DEBUG 
 
- void APIENTRY GL_errorCallback(GLenum source, GLenum type, GLenum id, GLenum severity, GLsizei length, const GLchar *message, const void userParam)
+ void APIENTRY GL_errorCallback(GLenum source, GLenum type, GLenum id, GLenum severity, GLsizei length, const GLchar *message, const void *userParam)
 {
 	fprintf(stderr, "%s\n", message);
 	if (severity == GL_DEBUG_SEVERITY_HIGH)
