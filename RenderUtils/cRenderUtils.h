@@ -12,6 +12,7 @@ struct Geometry
 Geometry makeGeometry(const struct Vertex *verts, size_t vsize, 
 						const unsigned int *tris, size_t tsize);
 void freeGeometry(Geometry &);
+Geometry loadOBJ(const char *path);
 
 
 struct Shader
@@ -23,8 +24,8 @@ Shader makeShader(const char *vsource, const char *fsource);
 
 void freeShader(Shader &shader);
 
-void draw(const Geometry &geometry, const Shader &shader);
-
 Shader loadShader(const char *vpath, const char *fpath);
 
-Geometry loadOBJ(const char *path);	
+void draw(const Geometry &geometry, const Shader &shader);
+
+void draw(const Geometry &geometry, const Shader &shader, float time);

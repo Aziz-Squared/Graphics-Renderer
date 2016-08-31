@@ -1,6 +1,7 @@
 #include "cRenderUtils.h"
 #include "window.h"
 #include "Vertex.h"
+#include "Gallery.h"
 
 // This is the dev branch
 
@@ -18,20 +19,30 @@ int main()
 
 	unsigned tris[6] = {0, 1, 2, 3, 4, 5};
 
-	Geometry geometry1 = loadOBJ("../res/models/cube.obj");
-	Geometry geometry2 = loadOBJ("../res/models/sphere.obj");
+	Gallery sphere, cube, shaders;
 
-	Shader shader = loadShader("../res/shaders/simpleVert.txt",
-								"../res/shaders/simpleFrag.txt");
+	sphere.makeObject("sphere", vert, 3, tris, 3);
+	shaders.makeShader("test", "../res/shaders/simpleVert.txt", 
+					"../res/shaders/simpleFrag.txt");
+	cube.makeObject("cube", vert, 3, tris, 3);
+
+	sphere.loadOBJ("sphere", "../res/models/sphere.obj");
+	cube.loadOBJ("cube", "../res/models/cube.obj");
+
+	shaders.loadShader("test", "../res/shaders/simpleVert.txt",
+					"../res/shaders/simpleFrag.txt");
+
+	float time = 0.0f;
 
 	while (window.step())
 	{
-		draw(geometry2, shader);
-		draw(geometry1, shader);
+		time += 0.2354f;
+		// UNIFORM!
+		draw(cube.getObject("test"), shaders.getShader("test"), time);
 	}
-	freeGeometry(geometry1);
+	/*freeGeometry(geometry1);
 	freeGeometry(geometry2);
-	freeShader(shader);
+	freeShader(shader);*/
 	window.term();
 	return 0;
 }

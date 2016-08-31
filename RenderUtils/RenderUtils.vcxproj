@@ -128,9 +128,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="cRenderUtils.cpp" />
+    <ClCompile Include="Gallery.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cRenderUtils.h" />
+    <ClInclude Include="Gallery.h" />
     <ClInclude Include="Vertex.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

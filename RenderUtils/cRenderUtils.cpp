@@ -96,6 +96,20 @@ void draw(const Geometry &geometry, const Shader &shader)
 	glDrawElements(GL_TRIANGLES, geometry.size, GL_UNSIGNED_INT, 0);
 }
 
+void draw(const Geometry &geometry, const Shader &shader, float time)
+{
+	glUseProgram(shader.handle);
+	glBindVertexArray(geometry.vao);
+
+	int loc = glGetUniformLocation(shader.handle, "time");
+
+	glUniform1f(loc, time);
+
+	glDrawElements(GL_TRIANGLES, geometry.size, GL_UNSIGNED_INT, 0);
+
+
+}
+
 std::string copyFileToArray(const char *path)
 {
 	std::stringstream line;
