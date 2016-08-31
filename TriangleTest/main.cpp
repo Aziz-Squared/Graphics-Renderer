@@ -43,6 +43,8 @@ int main()
 	/*freeGeometry(geometry1);
 	freeGeometry(geometry2);
 	freeShader(shader);*/
+	cube.term();
+	sphere.term();
 	window.term();
 	return 0;
 }
