@@ -29,3 +29,5 @@ Shader loadShader(const char *vpath, const char *fpath);
 void draw(const Geometry &geometry, const Shader &shader);
 
 void draw(const Geometry &geometry, const Shader &shader, float time);
+
+void draw(const Geometry &geometry, const Shader &shader, const float M[16], const float V[16], const float P[16]);
