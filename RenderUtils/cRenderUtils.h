@@ -2,9 +2,12 @@
 #include "Vertex.h"
 #include "window.h"
 
+#include "globjects.h"
 #include "glmake.h"
 #include "glload.h"
-#include "globjects.h"
+#include "gldraw.h"
+
+
 
 
 //// Geometry functions

@@ -14,7 +14,7 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
     <Filter Include="Shaders">
-      <UniqueIdentifier>{1fc0e054-d82a-4976-b843-d95912532827}</UniqueIdentifier>
+      <UniqueIdentifier>{e245dba1-3574-4c7b-9d93-3a480ad11c45}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -37,6 +37,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="procgen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gldraw.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -77,41 +80,39 @@
     <ClInclude Include="glload.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="gldraw.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="..\res\shaders\shader guide.txt">
-      <Filter>Shaders</Filter>
-    </Text>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="postFrag.glsl">
+    <None Include="..\res\shaders\cameraFrag.glsl">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="textureVert.glsl">
+    <None Include="..\res\shaders\cameraVert.glsl">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="textureFrag.glsl">
+    <None Include="..\res\shaders\phongFrag.glsl">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="simpleVert.glsl">
+    <None Include="..\res\shaders\phongVert.glsl">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="simpleFrag.glsl">
+    <None Include="..\res\shaders\postFrag.glsl">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="cameraVert.glsl">
+    <None Include="..\res\shaders\postVert.glsl">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="cameraFrag.glsl">
+    <None Include="..\res\shaders\simpleFrag.glsl">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="postVert.glsl">
+    <None Include="..\res\shaders\simpleVert.glsl">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="phongFrag.glsl">
+    <None Include="..\res\shaders\textureFrag.glsl">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="phongVert.glsl">
+    <None Include="..\res\shaders\textureVert.glsl">
       <Filter>Shaders</Filter>
     </None>
   </ItemGroup>

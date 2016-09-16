@@ -130,6 +130,7 @@
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="cRenderUtils.cpp" />
     <ClCompile Include="Gallery.cpp" />
+    <ClCompile Include="gldraw.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="procgen.cpp" />
     <ClCompile Include="Time.cpp" />
@@ -140,6 +141,7 @@
     <ClInclude Include="cRenderUtils.h" />
     <ClInclude Include="Gallery.h" />
     <ClInclude Include="gldecs.h" />
+    <ClInclude Include="gldraw.h" />
     <ClInclude Include="glload.h" />
     <ClInclude Include="glmake.h" />
     <ClInclude Include="globjects.h" />
@@ -150,19 +152,16 @@
     <ClInclude Include="window.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="cameraFrag.glsl" />
-    <None Include="cameraVert.glsl" />
-    <None Include="phongFrag.glsl" />
-    <None Include="phongVert.glsl" />
-    <None Include="postFrag.glsl" />
-    <None Include="postVert.glsl" />
-    <None Include="simpleFrag.glsl" />
-    <None Include="simpleVert.glsl" />
-    <None Include="textureFrag.glsl" />
-    <None Include="textureVert.glsl" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="..\res\shaders\shader guide.txt" />
+    <None Include="..\res\shaders\cameraFrag.glsl" />
+    <None Include="..\res\shaders\cameraVert.glsl" />
+    <None Include="..\res\shaders\phongFrag.glsl" />
+    <None Include="..\res\shaders\phongVert.glsl" />
+    <None Include="..\res\shaders\postFrag.glsl" />
+    <None Include="..\res\shaders\postVert.glsl" />
+    <None Include="..\res\shaders\simpleFrag.glsl" />
+    <None Include="..\res\shaders\simpleVert.glsl" />
+    <None Include="..\res\shaders\textureFrag.glsl" />
+    <None Include="..\res\shaders\textureVert.glsl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

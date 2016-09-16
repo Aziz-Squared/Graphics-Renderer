@@ -1,0 +1,68 @@
+Grids and Heightmaps
+UVs and normals (OBJ) -> Apply
+Heightmap to cube
+
+Lighting
+Forward Rendering/Lighting
+Normal Mapping
+
+Noise:
+	Perlin Noise
+		RNG
+
+Geometry
+	Subdivides the space for drawing
+
+Shader
+	Fills in the space to be drawn
+
+Uniforms
+	Set parameters on the shaders
+
+Textures
+
+Framebuffer object (handle, dimensions, array of textures)
+
+MakeFrameBuffer
+	Create a number of desired textures and associate them with the FB
+
+FreeFramebuffer
+	Deletes it
+
+ClearFramebuffer
+	Clears the data in the FB
+
+Draw Phong expanded
+	Now includes an FB target
+	Binding the FB and setting the glViewport
+
+Shaders
+	-> Better error handling
+
+Textures
+	-> More options
+
+Geometry
+	->Pretty good
+
+Framebuffers
+	-> Better options
+
+State Management
+	->glEnable/glDisable stuff
+	Depth Testing
+	Face Culling
+	glViewport
+
+Universal Draw Function
+-------------------------
+
+Headers Reorganized
+- Provide a single point of entry for library features
+-Ensure consitent loading of OpenGL resources
+
+gldecs.h 	// errors
+globjects.h 	// objects
+glmake.h 	// make functions
+glload.h 	// load functions
+gldraw.h 	// the draw functions
