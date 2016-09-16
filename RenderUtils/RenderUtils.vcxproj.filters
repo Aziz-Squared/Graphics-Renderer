@@ -13,15 +13,30 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{1fc0e054-d82a-4976-b843-d95912532827}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="cRenderUtils.cpp">
+    <ClCompile Include="window.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Time.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Input.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Gallery.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="window.cpp">
+    <ClCompile Include="cRenderUtils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="procgen.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -29,14 +44,75 @@
     <ClInclude Include="cRenderUtils.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Vertex.h">
+    <ClInclude Include="Gallery.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Gallery.h">
+    <ClInclude Include="Input.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Vertex.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="window.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="globjects.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="gldecs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="procgen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="glmake.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="glload.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\res\shaders\shader guide.txt">
+      <Filter>Shaders</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="postFrag.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="textureVert.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="textureFrag.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="simpleVert.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="simpleFrag.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="cameraVert.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="cameraFrag.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="postVert.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="phongFrag.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="phongVert.glsl">
+      <Filter>Shaders</Filter>
+    </None>
   </ItemGroup>
 </Project>

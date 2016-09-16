@@ -80,7 +80,7 @@
       <LinkLibraryDependencies>true</LinkLibraryDependencies>
     </ProjectReference>
     <Lib>
-      <AdditionalDependencies>glew32s.lib;glfw3.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>glew32s.lib;glfw3.lib;opengl32.lib;OpenAL32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)dep\lib\</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
@@ -108,7 +108,7 @@
       <LinkLibraryDependencies>true</LinkLibraryDependencies>
     </ProjectReference>
     <Lib>
-      <AdditionalDependencies>glew32s.lib;glfw3.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>glew32s.lib;glfw3.lib;opengl32.lib;OpenAL32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)dep\lib\</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
@@ -127,15 +127,42 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Camera.cpp" />
     <ClCompile Include="cRenderUtils.cpp" />
     <ClCompile Include="Gallery.cpp" />
+    <ClCompile Include="Input.cpp" />
+    <ClCompile Include="procgen.cpp" />
+    <ClCompile Include="Time.cpp" />
     <ClCompile Include="window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Camera.h" />
     <ClInclude Include="cRenderUtils.h" />
     <ClInclude Include="Gallery.h" />
+    <ClInclude Include="gldecs.h" />
+    <ClInclude Include="glload.h" />
+    <ClInclude Include="glmake.h" />
+    <ClInclude Include="globjects.h" />
+    <ClInclude Include="Input.h" />
+    <ClInclude Include="procgen.h" />
+    <ClInclude Include="Timer.h" />
     <ClInclude Include="Vertex.h" />
     <ClInclude Include="window.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cameraFrag.glsl" />
+    <None Include="cameraVert.glsl" />
+    <None Include="phongFrag.glsl" />
+    <None Include="phongVert.glsl" />
+    <None Include="postFrag.glsl" />
+    <None Include="postVert.glsl" />
+    <None Include="simpleFrag.glsl" />
+    <None Include="simpleVert.glsl" />
+    <None Include="textureFrag.glsl" />
+    <None Include="textureVert.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\res\shaders\shader guide.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

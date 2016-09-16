@@ -1,3 +1,5 @@
+#include "gldecs.h"
+#include "crenderutils.h"
 #include "Gallery.h"
 
 bool Gallery::makeShader(const char * name, const char * vsource, const char * fsource)
@@ -55,9 +57,26 @@ bool Gallery::loadOBJ(const char* name, const char* path)
 	return false;
 }
 
+const Texture & Gallery::getTexture(const char * name)
+{
+	return textures[name];
+}
+
 const Geometry & Gallery::getObject(const char *name)
 {
 		return objects[name];
+}
+
+bool Gallery::makeTexture(const char * name, int w, int h, int f, const unsigned char * p)
+{
+	textures[name] = ::makeTexture(w, h, f, p);
+	return true;
+}
+
+bool Gallery::loadTexture(const char * name, const char * path)
+{
+	textures[name] = ::loadTexture(path);
+	return true;
 }
 
 bool Gallery::term()

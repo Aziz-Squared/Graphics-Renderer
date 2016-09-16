@@ -5,11 +5,6 @@ VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RenderUtils", "RenderUtils\RenderUtils.vcxproj", "{89C06B43-5D84-424A-85CB-F8A0CAE9FAAB}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TriangleTest", "TriangleTest\TriangleTest.vcxproj", "{10B94057-1FB2-481C-BF35-5BB6401B7A09}"
-	ProjectSection(ProjectDependencies) = postProject
-		{89C06B43-5D84-424A-85CB-F8A0CAE9FAAB} = {89C06B43-5D84-424A-85CB-F8A0CAE9FAAB}
-	EndProjectSection
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Camera Test", "Camera Test\Camera Test.vcxproj", "{EF63B2E3-A1BD-43C5-BC31-48D11FF6E7F8}"
 	ProjectSection(ProjectDependencies) = postProject
 		{89C06B43-5D84-424A-85CB-F8A0CAE9FAAB} = {89C06B43-5D84-424A-85CB-F8A0CAE9FAAB}
@@ -25,10 +20,6 @@ Global
 		{89C06B43-5D84-424A-85CB-F8A0CAE9FAAB}.Debug|x86.Build.0 = Debug|Win32
 		{89C06B43-5D84-424A-85CB-F8A0CAE9FAAB}.Release|x86.ActiveCfg = Release|Win32
 		{89C06B43-5D84-424A-85CB-F8A0CAE9FAAB}.Release|x86.Build.0 = Release|Win32
-		{10B94057-1FB2-481C-BF35-5BB6401B7A09}.Debug|x86.ActiveCfg = Debug|Win32
-		{10B94057-1FB2-481C-BF35-5BB6401B7A09}.Debug|x86.Build.0 = Debug|Win32
-		{10B94057-1FB2-481C-BF35-5BB6401B7A09}.Release|x86.ActiveCfg = Release|Win32
-		{10B94057-1FB2-481C-BF35-5BB6401B7A09}.Release|x86.Build.0 = Release|Win32
 		{EF63B2E3-A1BD-43C5-BC31-48D11FF6E7F8}.Debug|x86.ActiveCfg = Debug|Win32
 		{EF63B2E3-A1BD-43C5-BC31-48D11FF6E7F8}.Debug|x86.Build.0 = Debug|Win32
 		{EF63B2E3-A1BD-43C5-BC31-48D11FF6E7F8}.Release|x86.ActiveCfg = Release|Win32
