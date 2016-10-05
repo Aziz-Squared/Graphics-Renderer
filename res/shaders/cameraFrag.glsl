@@ -55,9 +55,6 @@ void main()
 }
 
 
-
-
-
 mat4 cotangent_frame(in vec4 N, in vec4 p, in vec2 uv )
 {
     vec4 dp1  = dFdx( p );

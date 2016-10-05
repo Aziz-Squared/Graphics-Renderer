@@ -16,41 +16,107 @@
     <Filter Include="Shaders">
       <UniqueIdentifier>{e245dba1-3574-4c7b-9d93-3a480ad11c45}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Shaders\FragShaders">
+      <UniqueIdentifier>{abbe90f5-316b-4288-81e6-2e055360a4f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders\VertShaders">
+      <UniqueIdentifier>{3225c330-2d3b-4cdc-99c5-6f06ef27a4a5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="window.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Time.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Input.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Gallery.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="cRenderUtils.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Camera.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="procgen.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="gldraw.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
+    <None Include="..\res\shaders\cameraFrag.glsl">
+      <Filter>Shaders\FragShaders</Filter>
+    </None>
+    <None Include="..\res\shaders\phongFrag.glsl">
+      <Filter>Shaders\FragShaders</Filter>
+    </None>
+    <None Include="..\res\shaders\postFrag.glsl">
+      <Filter>Shaders\FragShaders</Filter>
+    </None>
+    <None Include="..\res\shaders\simpleFrag.glsl">
+      <Filter>Shaders\FragShaders</Filter>
+    </None>
+    <None Include="..\res\shaders\textureFrag.glsl">
+      <Filter>Shaders\FragShaders</Filter>
+    </None>
+    <None Include="..\res\shaders\cameraVert.glsl">
+      <Filter>Shaders\VertShaders</Filter>
+    </None>
+    <None Include="..\res\shaders\phongVert.glsl">
+      <Filter>Shaders\VertShaders</Filter>
+    </None>
+    <None Include="..\res\shaders\postVert.glsl">
+      <Filter>Shaders\VertShaders</Filter>
+    </None>
+    <None Include="..\res\shaders\simpleVert.glsl">
+      <Filter>Shaders\VertShaders</Filter>
+    </None>
+    <None Include="..\res\shaders\textureVert.glsl">
+      <Filter>Shaders\VertShaders</Filter>
+    </None>
+    <None Include="..\res\shaders\gpassFrag.glsl">
+      <Filter>Shaders\FragShaders</Filter>
+    </None>
+    <None Include="..\res\shaders\gpassVert.glsl">
+      <Filter>Shaders\VertShaders</Filter>
+    </None>
+    <None Include="..\res\shaders\quadFrag.glsl">
+      <Filter>Shaders\FragShaders</Filter>
+    </None>
+    <None Include="..\res\shaders\lPassFrag.glsl">
+      <Filter>Shaders\FragShaders</Filter>
+    </None>
+    <None Include="..\res\shaders\quadVert.glsl">
+      <Filter>Shaders\VertShaders</Filter>
+    </None>
+    <None Include="..\res\shaders\lPassVert.glsl">
+      <Filter>Shaders\VertShaders</Filter>
+    </None>
+    <None Include="onequadFrag.glsl">
+      <Filter>Shaders\FragShaders</Filter>
+    </None>
+    <None Include="onequadVert.glsl">
+      <Filter>Shaders\VertShaders</Filter>
+    </None>
+    <None Include="spassFrag.glsl">
+      <Filter>Shaders\FragShaders</Filter>
+    </None>
+    <None Include="spassVert.glsl">
+      <Filter>Shaders\VertShaders</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="gldecs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="glmake.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="gldraw.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="gldecs2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="cRenderUtils.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Gallery.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="glload.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="globjects.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="Input.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="procgen.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Timer.h">
@@ -62,58 +128,37 @@
     <ClInclude Include="window.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Camera.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="globjects.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="gldecs.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="procgen.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="glmake.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="glload.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="gldraw.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\res\shaders\cameraFrag.glsl">
-      <Filter>Shaders</Filter>
-    </None>
-    <None Include="..\res\shaders\cameraVert.glsl">
-      <Filter>Shaders</Filter>
-    </None>
-    <None Include="..\res\shaders\phongFrag.glsl">
-      <Filter>Shaders</Filter>
-    </None>
-    <None Include="..\res\shaders\phongVert.glsl">
-      <Filter>Shaders</Filter>
-    </None>
-    <None Include="..\res\shaders\postFrag.glsl">
-      <Filter>Shaders</Filter>
-    </None>
-    <None Include="..\res\shaders\postVert.glsl">
-      <Filter>Shaders</Filter>
-    </None>
-    <None Include="..\res\shaders\simpleFrag.glsl">
-      <Filter>Shaders</Filter>
-    </None>
-    <None Include="..\res\shaders\simpleVert.glsl">
-      <Filter>Shaders</Filter>
-    </None>
-    <None Include="..\res\shaders\textureFrag.glsl">
-      <Filter>Shaders</Filter>
-    </None>
-    <None Include="..\res\shaders\textureVert.glsl">
-      <Filter>Shaders</Filter>
-    </None>
+    <ClCompile Include="gldraw.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cRenderUtils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Gallery.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Input.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="procgen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Time.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="window.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="glload.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="glmake.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

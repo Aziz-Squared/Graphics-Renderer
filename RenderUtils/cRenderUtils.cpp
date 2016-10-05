@@ -6,10 +6,6 @@
 
 
 
-
-
-
-
 void draw(const Geometry &geometry, const Shader &shader)
 {
 	glUseProgram(shader.handle);

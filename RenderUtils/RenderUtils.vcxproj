@@ -9,14 +9,6 @@
       <Configuration>Release</Configuration>
       <Platform>Win32</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Debug|x64">
-      <Configuration>Debug</Configuration>
-      <Platform>x64</Platform>
-    </ProjectConfiguration>
-    <ProjectConfiguration Include="Release|x64">
-      <Configuration>Release</Configuration>
-      <Platform>x64</Platform>
-    </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{89C06B43-5D84-424A-85CB-F8A0CAE9FAAB}</ProjectGuid>
@@ -37,19 +29,6 @@
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
-    <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
-    <CharacterSet>MultiByte</CharacterSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
-    <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
-    <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>MultiByte</CharacterSet>
-  </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
   </ImportGroup>
@@ -59,12 +38,6 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-  </ImportGroup>
-  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-  </ImportGroup>
-  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
@@ -80,16 +53,9 @@
       <LinkLibraryDependencies>true</LinkLibraryDependencies>
     </ProjectReference>
     <Lib>
-      <AdditionalDependencies>glew32s.lib;glfw3.lib;opengl32.lib;OpenAL32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>glew32s.lib;glfw3.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)dep\lib\</AdditionalLibraryDirectories>
     </Lib>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
-      <Optimization>Disabled</Optimization>
-      <SDLCheck>true</SDLCheck>
-    </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -108,39 +74,38 @@
       <LinkLibraryDependencies>true</LinkLibraryDependencies>
     </ProjectReference>
     <Lib>
-      <AdditionalDependencies>glew32s.lib;glfw3.lib;opengl32.lib;OpenAL32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>glew32s.lib;glfw3.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)dep\lib\</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
-      <Optimization>MaxSpeed</Optimization>
-      <FunctionLevelLinking>true</FunctionLevelLinking>
-      <IntrinsicFunctions>true</IntrinsicFunctions>
-      <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(SolutionDir)/dep/include</AdditionalIncludeDirectories>
-    </ClCompile>
-    <Link>
-      <EnableCOMDATFolding>true</EnableCOMDATFolding>
-      <OptimizeReferences>true</OptimizeReferences>
-    </Link>
-  </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Camera.cpp" />
-    <ClCompile Include="cRenderUtils.cpp" />
-    <ClCompile Include="Gallery.cpp" />
-    <ClCompile Include="gldraw.cpp" />
-    <ClCompile Include="Input.cpp" />
-    <ClCompile Include="procgen.cpp" />
-    <ClCompile Include="Time.cpp" />
-    <ClCompile Include="window.cpp" />
+    <None Include="..\res\shaders\cameraFrag.glsl" />
+    <None Include="..\res\shaders\cameraVert.glsl" />
+    <None Include="..\res\shaders\gpassFrag.glsl" />
+    <None Include="..\res\shaders\gpassVert.glsl" />
+    <None Include="..\res\shaders\lPassFrag.glsl" />
+    <None Include="..\res\shaders\lPassVert.glsl" />
+    <None Include="..\res\shaders\phongFrag.glsl" />
+    <None Include="..\res\shaders\phongVert.glsl" />
+    <None Include="..\res\shaders\postFrag.glsl" />
+    <None Include="..\res\shaders\postVert.glsl" />
+    <None Include="..\res\shaders\quadFrag.glsl" />
+    <None Include="..\res\shaders\quadVert.glsl" />
+    <None Include="..\res\shaders\simpleFrag.glsl" />
+    <None Include="..\res\shaders\simpleVert.glsl" />
+    <None Include="..\res\shaders\textureFrag.glsl" />
+    <None Include="..\res\shaders\textureVert.glsl" />
+    <None Include="onequadFrag.glsl" />
+    <None Include="onequadVert.glsl" />
+    <None Include="spassFrag.glsl" />
+    <None Include="spassVert.glsl" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera.h" />
     <ClInclude Include="cRenderUtils.h" />
     <ClInclude Include="Gallery.h" />
     <ClInclude Include="gldecs.h" />
+    <ClInclude Include="gldecs2.h" />
     <ClInclude Include="gldraw.h" />
     <ClInclude Include="glload.h" />
     <ClInclude Include="glmake.h" />
@@ -152,16 +117,16 @@
     <ClInclude Include="window.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\res\shaders\cameraFrag.glsl" />
-    <None Include="..\res\shaders\cameraVert.glsl" />
-    <None Include="..\res\shaders\phongFrag.glsl" />
-    <None Include="..\res\shaders\phongVert.glsl" />
-    <None Include="..\res\shaders\postFrag.glsl" />
-    <None Include="..\res\shaders\postVert.glsl" />
-    <None Include="..\res\shaders\simpleFrag.glsl" />
-    <None Include="..\res\shaders\simpleVert.glsl" />
-    <None Include="..\res\shaders\textureFrag.glsl" />
-    <None Include="..\res\shaders\textureVert.glsl" />
+    <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="cRenderUtils.cpp" />
+    <ClCompile Include="Gallery.cpp" />
+    <ClCompile Include="gldraw.cpp" />
+    <ClCompile Include="glload.cpp" />
+    <ClCompile Include="glmake.cpp" />
+    <ClCompile Include="Input.cpp" />
+    <ClCompile Include="procgen.cpp" />
+    <ClCompile Include="Time.cpp" />
+    <ClCompile Include="window.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

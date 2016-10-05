@@ -12,7 +12,7 @@
 	fprintf(stderr, "%s\n", message);
 	if (severity == GL_DEBUG_SEVERITY_HIGH)
 	{
-		abort();
+//		abort();
 	}
 }
 #endif
@@ -27,7 +27,7 @@ bool Window::init(int a_width, int a_height, char * a_title)
 	isInitialized = true;
 
 	glewExperimental = true;
-	glewInit();
+	auto blah = glewInit();
 	glClearColor(0.5f, .5f, .5f, .5f);
 
 #ifdef _DEBUG
@@ -48,7 +48,7 @@ bool Window::step()
 		
 	glfwPollEvents();
 	glfwSwapBuffers(winHandle);
-	glClear(GL_COLOR_BUFFER_BIT);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	return !glfwWindowShouldClose(winHandle);
 }
 
