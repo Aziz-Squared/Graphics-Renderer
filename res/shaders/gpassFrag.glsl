@@ -1,8 +1,11 @@
 #version 430
 
 in vec3 vPosition;
+in vec3 worldPosition;
 in vec3 vNormal;
 in vec2 vUV;
+
+layout(location = 1) uniform mat4 view;
 
 layout(location = 3) uniform sampler2D diffuseMap;
 layout(location = 4) uniform sampler2D normalMap;

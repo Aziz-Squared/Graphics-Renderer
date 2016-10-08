@@ -70,7 +70,7 @@ Shader makeShader(const char *vsource, const char *fsource,
 	// Linke the shaders into a single program
 	glAttachShader(retval.handle, vs);
 	glAttachShader(retval.handle, fs);
-	glog_glLinkProgram(retval.handle);
+	glLinkProgram(retval.handle);
 	// No longer need these! Their functionality has been eaten by the program
 	glDeleteShader(vs);
 	glDeleteShader(fs);
@@ -143,7 +143,7 @@ void freeTexture(Texture &t)
 }
 
 
-Framebuffer makeFramebuffer(unsigned width, unsigned height, unsigned nColors, bool *isfloat = nullptr, int *channels = nullptr)
+Framebuffer makeFramebuffer(unsigned width, unsigned height, unsigned nColors, bool *isfloat, int *channels)
 {
 	Framebuffer retval = { 0,width,height,nColors };
 

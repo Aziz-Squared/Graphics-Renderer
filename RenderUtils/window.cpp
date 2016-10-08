@@ -20,7 +20,7 @@ bool Window::init(int a_width, int a_height, char * a_title)
 {
 	width = a_width;
 	height = a_height;
-	strcpy_s(title, 64, a_title);
+	strcpy_s(title, 64, a_title);0000000000000000000000000000000000000000000000
 	glfwInit();
 	winHandle = glfwCreateWindow(a_width, a_height, a_title, nullptr, nullptr);
 	glfwMakeContextCurrent(winHandle);

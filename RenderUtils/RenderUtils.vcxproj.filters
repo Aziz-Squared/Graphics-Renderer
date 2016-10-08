@@ -66,9 +66,6 @@
     <None Include="..\res\shaders\lPassFrag.glsl">
       <Filter>Shaders\FragShaders</Filter>
     </None>
-    <None Include="..\res\shaders\quadVert.glsl">
-      <Filter>Shaders\VertShaders</Filter>
-    </None>
     <None Include="..\res\shaders\lPassVert.glsl">
       <Filter>Shaders\VertShaders</Filter>
     </None>
@@ -78,10 +75,25 @@
     <None Include="onequadVert.glsl">
       <Filter>Shaders\VertShaders</Filter>
     </None>
-    <None Include="spassFrag.glsl">
+    <None Include="copyFrag.glsl">
       <Filter>Shaders\FragShaders</Filter>
     </None>
-    <None Include="spassVert.glsl">
+    <None Include="copyVert.glsl">
+      <Filter>Shaders\VertShaders</Filter>
+    </None>
+    <None Include="sPassFrag.glsl">
+      <Filter>Shaders\FragShaders</Filter>
+    </None>
+    <None Include="sPassVert.glsl">
+      <Filter>Shaders\VertShaders</Filter>
+    </None>
+    <None Include="ssaoFrag.glsl">
+      <Filter>Shaders\FragShaders</Filter>
+    </None>
+    <None Include="ssaoVert.glsl">
+      <Filter>Shaders\VertShaders</Filter>
+    </None>
+    <None Include="quadVert.glsl">
       <Filter>Shaders\VertShaders</Filter>
     </None>
   </ItemGroup>

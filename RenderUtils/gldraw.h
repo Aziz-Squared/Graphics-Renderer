@@ -10,17 +10,18 @@ namespace tdraw_internal
 	void tdraw_begin(const Geometry &geometry, const Shader &shader, const Framebuffer &buffer);
 	void tdraw_close(const Geometry &geometry, const Shader &shader, const Framebuffer &buffer);
 
-	size_t tdraw_format(size_t idx, size_t tex, const glm::mat4 &val);
-	size_t tdraw_format(size_t idx, size_t tex, const glm::vec4 &val);
-	size_t tdraw_format(size_t idx, size_t tex, const glm::vec3 &val);
-	size_t tdraw_format(size_t idx, size_t tex, int   val);
-	size_t tdraw_format(size_t idx, size_t tex, float val);
-	size_t tdraw_format(size_t idx, size_t tex, const Texture &val);
+	void tdraw_format(size_t idx, size_t tex, const glm::mat4 &val);
+	void tdraw_format(size_t idx, size_t tex, const glm::vec4 &val);
+	void tdraw_format(size_t idx, size_t tex, const glm::vec3 &val);
+	void tdraw_format(size_t idx, size_t tex, int   val);
+	void tdraw_format(size_t idx, size_t tex, float val);
+	void tdraw_format(size_t idx, size_t tex, const Texture &val);
 
 	template<typename T, typename ...U>
 	void tdraw_unpack(size_t idx, size_t tex, T val, U &&...uniforms)
 	{
-		tex += tdraw_format(idx, tex, val);
+		tdraw_format(idx, tex, val);
+		tex++;
 		tdraw_unpack(idx + 1, tex, uniforms...);
 
 	}

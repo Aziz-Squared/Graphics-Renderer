@@ -90,15 +90,19 @@
     <None Include="..\res\shaders\postFrag.glsl" />
     <None Include="..\res\shaders\postVert.glsl" />
     <None Include="..\res\shaders\quadFrag.glsl" />
-    <None Include="..\res\shaders\quadVert.glsl" />
     <None Include="..\res\shaders\simpleFrag.glsl" />
     <None Include="..\res\shaders\simpleVert.glsl" />
     <None Include="..\res\shaders\textureFrag.glsl" />
     <None Include="..\res\shaders\textureVert.glsl" />
+    <None Include="copyFrag.glsl" />
+    <None Include="copyVert.glsl" />
     <None Include="onequadFrag.glsl" />
     <None Include="onequadVert.glsl" />
-    <None Include="spassFrag.glsl" />
-    <None Include="spassVert.glsl" />
+    <None Include="quadVert.glsl" />
+    <None Include="sPassFrag.glsl" />
+    <None Include="sPassVert.glsl" />
+    <None Include="ssaoFrag.glsl" />
+    <None Include="ssaoVert.glsl" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera.h" />

@@ -7,6 +7,7 @@ layout(location = 3) in vec2 texcoord;
 out vec2 vUV;
 out vec3 vNormal;
 out vec3 vPosition;
+out vec3 worldPosition;
 
 layout(location = 0) uniform mat4 model;
 layout(location = 1) uniform mat4 view;
@@ -16,6 +17,7 @@ void main()
 {
 	vNormal   = (view * model * normal).xyz;
 	vPosition = (view * model * position).xyz;
+	worldPosition = (model * position).xyz;
 
 	vUV = texcoord;
 	gl_Position = proj * view * model * position;

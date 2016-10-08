@@ -22,6 +22,7 @@ Texture makeTextureF(unsigned square, const float * pixels);
 
 void freeTexture(Texture &t);
 
-Framebuffer makeFramebuffer(unsigned width, unsigned height, unsigned nColors, bool *isfloat = nullptr, int *channels = nullptr);
+Framebuffer makeFramebuffer(unsigned width, unsigned height, unsigned nColors, 
+							bool *isfloat = nullptr, int *channels = nullptr);
 
 void freeFramebuffer(Framebuffer &fb);
