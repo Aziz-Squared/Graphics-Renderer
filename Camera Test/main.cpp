@@ -68,8 +68,11 @@ void main()
 
 	Shader lpass = loadShader("../res/shaders/lPassVert.glsl",
 								"../res/shaders/lPassFrag.glsl", false, true);
-	Shader spass = loadShader("..res/shaders/spassVert.glsl",
-								"..res/shaders/spassFrag.glsl", false);
+	Shader spass = loadShader("../res/shaders/spassVert.glsl",
+								"../res/shaders/spassFrag.glsl", false);
+
+	Shader bpass = loadShader("../res/shaders/bloomVert.glsl",
+								"../res/shaders/bloomFrag.glsl", false);
 
 
 	Framebuffer screen = { 0, 1280, 720 };
@@ -78,6 +81,7 @@ void main()
 	bool isFtex[] = { false, true, false, true };
 	Framebuffer gframe = makeFramebuffer(1280, 720, 4, isFtex);
 	Framebuffer lframe = makeFramebuffer(1280, 720, 3);
+	Framebuffer bframe = makeFramebuffer(1280, 720, 1);
 
 	// Temporary shadow framebuffer. Will be cleared and reused by each light!
 	// Its RESOLUTION WILL GREATLY EFFECT THE QUALITY. Try playing around with high/low res
@@ -113,12 +117,15 @@ void main()
 		time += 0.016f;
 		spearModel = glm::rotate(time, glm::vec3(0, 1, 0)) * glm::translate(glm::vec3(0, -1, 0));
 
+		clearFramebuffer(bframe);
+		tdraw(spear, bpass, bframe, camView, camProj, white, vertex_normals, white);
+
 		////////////////////////////////////////////////
 		// Geometry pass
 		//
 		clearFramebuffer(gframe);
 		//
-		tdraw(quad, gpass, gframe, camView, camProj, white, vertex_normals, white);
+		tdraw(spear, gpass, gframe, camView, camProj, white, vertex_normals, white);
 
 		//////////////////////////////////////////////
 		// Light pass
@@ -141,7 +148,7 @@ void main()
 
 		// note that the sframe (shadow pass) will only be from the most recent light
 		Texture debug_list[] = { gframe.colors[0], gframe.colors[1], gframe.colors[2], gframe.colors[3],
-								gframe.depth, lframe.colors[1], lframe.colors[2], sframe.depth };
+								gframe.depth, lframe.colors[1], lframe.colors[2], sframe.depth, bframe.colors[1] };
 
 		for (int i = 0; i < sizeof(debug_list) / sizeof(Texture); ++i)
 		{

@@ -96,6 +96,12 @@
     <None Include="quadVert.glsl">
       <Filter>Shaders\VertShaders</Filter>
     </None>
+    <None Include="bloomVert.glsl">
+      <Filter>Shaders\VertShaders</Filter>
+    </None>
+    <None Include="bloomFrag.glsl">
+      <Filter>Shaders</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="gldecs.h">

@@ -56,14 +56,6 @@ Texture loadTexture(const char *path)
 
 	if (!p) return retval;
 
-	switch (f)
-	{
-	case STBI_grey: f = GL_RED;  break;
-	case STBI_grey_alpha: f = GL_RG;   break;
-	case STBI_rgb: f = GL_RGB;  break;
-	case STBI_rgb_alpha: f = GL_RGBA; break;
-	}
-
 	retval = makeTexture(w, h, f, p);
 	stbi_image_free(p);
 	return retval;

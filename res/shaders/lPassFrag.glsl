@@ -29,8 +29,7 @@ layout(location = 2) out vec4 outSpecular;
 uniform mat4 clipToUV = mat4(0.5f, 0.0f, 0.0f, 0.0f,
 														0.0f, 0.5f, 0.0f, 0.0f,
 														0.0f, 0.0f, 0.5f, 0.0f,
-														0.5f, 0.0f, 0.5f, 0.0f,
-														0.5f, 0.5f, 0.5f, 0.1f);
+														0.5f, 0.0f, 0.5f, 0.0f);
 
 
 void main()

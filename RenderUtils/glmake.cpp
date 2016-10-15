@@ -70,7 +70,7 @@ Shader makeShader(const char *vsource, const char *fsource,
 	// Linke the shaders into a single program
 	glAttachShader(retval.handle, vs);
 	glAttachShader(retval.handle, fs);
-	glLinkProgram(retval.handle);
+	glog_glLinkProgram(retval.handle);
 	// No longer need these! Their functionality has been eaten by the program
 	glDeleteShader(vs);
 	glDeleteShader(fs);
@@ -161,7 +161,7 @@ Framebuffer makeFramebuffer(unsigned width, unsigned height, unsigned nColors, b
 
 	for (int i = 0; i < nColors && i < 8; ++i)
 	{
-		retval.colors[i] = makeTexture(width, height, GL_RGBA, 0);
+		retval.colors[i] = makeTexture(width, height, channels ? channels[i] : 4, 0, isfloat ? isfloat[i] : false);
 		glFramebufferTexture(GL_FRAMEBUFFER, attachments[i],
 			retval.colors[i].handle, 0);
 	}

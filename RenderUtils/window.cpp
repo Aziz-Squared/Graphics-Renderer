@@ -12,7 +12,7 @@
 	fprintf(stderr, "%s\n", message);
 	if (severity == GL_DEBUG_SEVERITY_HIGH)
 	{
-//		abort();
+		abort();
 	}
 }
 #endif
@@ -20,7 +20,7 @@ bool Window::init(int a_width, int a_height, char * a_title)
 {
 	width = a_width;
 	height = a_height;
-	strcpy_s(title, 64, a_title);0000000000000000000000000000000000000000000000
+	strcpy_s(title, 64, a_title);
 	glfwInit();
 	winHandle = glfwCreateWindow(a_width, a_height, a_title, nullptr, nullptr);
 	glfwMakeContextCurrent(winHandle);
