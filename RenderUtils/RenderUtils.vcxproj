@@ -94,6 +94,8 @@
     <None Include="..\res\shaders\simpleVert.glsl" />
     <None Include="..\res\shaders\textureFrag.glsl" />
     <None Include="..\res\shaders\textureVert.glsl" />
+    <None Include="blinnFrag.glsl" />
+    <None Include="blinnVert.glsl" />
     <None Include="bloomFrag.glsl" />
     <None Include="bloomVert.glsl" />
     <None Include="copyFrag.glsl" />

@@ -100,8 +100,12 @@
       <Filter>Shaders\VertShaders</Filter>
     </None>
     <None Include="bloomFrag.glsl">
+      <Filter>Shaders\FragShaders</Filter>
+    </None>
+    <None Include="blinnVert.glsl">
       <Filter>Shaders</Filter>
     </None>
+    <None Include="blinnFrag.glsl" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="gldecs.h">
